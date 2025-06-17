@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salon Appointment Form</title>
+
+<!--js part for alert box
+  <script>
+    function showAlert() {
+        alert("Successfully submitted! Thank you for making an appointment.");
+    }
+</script>--->
+
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+<!--php part for get alert
+    <?php
+    // Start the session
+    session_start();
+
+    // Check if the user is logged in
+    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+?>--->
+
+
+  <div class="appointment-form">
+    <h2 style="color: #fff;">Salon Appointment Form</h2>
+    <form action="#" method="post"  onsubmit="showAlert()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <div class="form-group">
+        <label for="services">Select Services:</label>
+        <div class="services-list">
+          <input type="checkbox" id="haircut" name="services[]" value="Haircut">
+          <label for="haircut">Haircut</label>
+
+          <input type="checkbox" id="coloring" name="services[]" value="Coloring">
+          <label for="coloring">Coloring</label>
+
+          <input type="checkbox" id="manicure" name="services[]" value="Manicure">
+          <label for="manicure">Manicure</label>
+        </div>
+        <div class="form-group">
+            <label for="Other services">Other services:</label>
+            <input type="text" id="otherservices" name="otherservices">
+          </div>
+      </div>
+      <input type="submit" value="Submit Appointment">
+    </form>
+  </div>
+
+  <!--php part for get alert
+  <?php
+        } else {
+            // If the user is not logged in, redirect them to the login page
+            header("Location: login.html");
+            exit;
+        }
+    ?> ---->
+
+
+</body>
+</html>
